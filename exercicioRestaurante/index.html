@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exerc´cio 3</title>
+</head>
+<body>
+
+    <!-- Elaborar um programa para um restaurante que leia o preço por KG e o CONSUMO
+     (em gramas) de um cliente. Exiba o VALOR a ser pago. -->
+     <!-- Maiuscula = palavras-chave -->
+
+
+    <h1>Restaurante JS</h1>
+    <hr>
+    <P>Buffet por Quilo R$: 
+        <input type="text" id="inKG">
+    </P>
+    <p>Consumo do Cliente (gr):
+        <input type="text" id="inConsumo">
+    </p>
+    <p>
+        <input type="button" value="Calcular Preço" id="btnCalcular">
+    </p>
+    <p id="outValor"></p>
+
+    <script>
+
+        function calcularPreco(){
+
+            let inKG = document.getElementById('inKG')
+            let outValor = document.getElementById('outValor')
+            let inConsumo = document.getElementById('inConsumo')
+
+            let consumo = inConsumo.value 
+            let KG = inKG.value 
+
+            // 1kg = 1000g
+            let valor = (KG / 1000) * consumo 
+            
+            outValor.textContent = `Valor a pagar R$: ${valor}`
+        }
+
+        let btnCalcular = document.getElementById("btnCalcular");
+        btnCalcular.addEventListener('click', calcularPreco)
+    </script>
+</body>
+</html>

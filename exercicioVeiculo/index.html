@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Revenda de Veículos JS</h1>
+    <hr>
+    <p>Veículo: 
+        <input type="text" id="inVeiculo">
+    </p>
+    <p>Preço R$: 
+        <input type="text" id="inPreco">
+    </p>
+    <p>
+        <input type="button" value="Ver Promoção" id="btnPromocao">
+    </p>
+    <p id="outVeiculo"></p>
+    <p id="outEntrada"></p>
+    <p id="outParcela"></p>
+
+    <script>
+
+        function Promocao(){
+    
+            let inVeiculo = document.getElementById ("inVeiculo")
+            let outVeiculo = document.getElementById("outVeiculo")
+            let outEntrada = document.getElementById("outEntrada")
+            let inPreco = document.getElementById("inPreco")
+            let outParcela = document.getElementById("outParcela")
+
+            
+            let veiculo = inVeiculo.value
+            let preco = inPreco.value
+
+            // 50% = 0.5
+            let entrada = preco * 0.5
+            let parcela = (preco * 0.5) / 12
+
+            outVeiculo.textContent = `Veículo: ${veiculo}`
+            outEntrada.textContent = `Entrada de R$: ${entrada}`
+            outParcela.textContent = `12 x de R$: ${parcela}`
+        
+        }
+
+        let btnPromocao = document.getElementById('btnPromocao')
+        btnPromocao.addEventListener('click', Promocao)
+
+       
+
+    </script>
+</body>
+</html>
